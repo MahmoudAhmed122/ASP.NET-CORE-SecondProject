@@ -1,0 +1,57 @@
+﻿@using MVC_CORE_Application.Models.ViewModel
+
+@model RegisterViewModel
+
+@{
+    ViewData["Title"] = "Register";
+    Layout = "_AuthenticationLayout";
+
+}
+
+<form asp-action="Register">
+    <div class="login_form">
+        <h2>Register</h2>
+        <div class="input_group">
+
+            <input type="email" asp-for="Email" placeholder="Email" class="input_text" autocomplete="off" />
+        </div>
+        <span asp-validation-for="Email" style="color:darkorchid; margin-top:10px;"></span>
+
+        <div class="input_group">
+            <input type="password" asp-for="Password" placeholder="Password" class="input_text" autocomplete="off" />
+
+        </div>
+        <span asp-validation-for="Password" style="color:darkorchid;; margin-top:10px;"></span>
+
+        <div class="input_group">
+            <input type="password" asp-for="ConfirmPassword" placeholder="ConfirmPassword" class="input_text" autocomplete="off" />
+
+        </div>
+        <span asp-validation-for="ConfirmPassword" style="color:darkorchid;; margin-top:10px;"></span>
+
+        <div class="fotter">
+            <div class="form-check" style="margin-top:50px;">
+                <input asp-for="IsAgree" class="form-check-input" type="checkbox" id="flexCheckDefault" />
+                <span asp-validation-for="IsAgree" style="color:darkorchid;;margin-top:10px;"></span>
+
+                <label class="form-check-label" for="flexCheckDefault">
+                    Is Agree To Conditions
+                </label>
+            </div>
+            <a style="margin-top:45px;color: #00ccff;" asp-action="Login">Login</a>
+
+
+        </div>
+        <div id="login_button">
+
+            <button style="color: #00ccff;" type="submit">Register</button>
+        </div>
+
+    </div>
+</form>
+
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+
+}

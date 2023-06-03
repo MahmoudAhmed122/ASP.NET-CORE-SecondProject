@@ -1,0 +1,12 @@
+D:\.Net learning\back_end\MVC CORE Application\MVC CORE.DDL\bin\Debug\net6.0\MVC CORE.DAL.deps.json
+D:\.Net learning\back_end\MVC CORE Application\MVC CORE.DDL\bin\Debug\net6.0\MVC CORE.DAL.dll
+D:\.Net learning\back_end\MVC CORE Application\MVC CORE.DDL\bin\Debug\net6.0\MVC CORE.DAL.pdb
+D:\.Net learning\back_end\MVC CORE Application\MVC CORE.DDL\obj\Debug\net6.0\MVC CORE.DAL.csproj.AssemblyReference.cache
+D:\.Net learning\back_end\MVC CORE Application\MVC CORE.DDL\obj\Debug\net6.0\MVC CORE.DAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\.Net learning\back_end\MVC CORE Application\MVC CORE.DDL\obj\Debug\net6.0\MVC CORE.DAL.AssemblyInfoInputs.cache
+D:\.Net learning\back_end\MVC CORE Application\MVC CORE.DDL\obj\Debug\net6.0\MVC CORE.DAL.AssemblyInfo.cs
+D:\.Net learning\back_end\MVC CORE Application\MVC CORE.DDL\obj\Debug\net6.0\MVC CORE.DAL.csproj.CoreCompileInputs.cache
+D:\.Net learning\back_end\MVC CORE Application\MVC CORE.DDL\obj\Debug\net6.0\MVC CORE.DAL.dll
+D:\.Net learning\back_end\MVC CORE Application\MVC CORE.DDL\obj\Debug\net6.0\refint\MVC CORE.DAL.dll
+D:\.Net learning\back_end\MVC CORE Application\MVC CORE.DDL\obj\Debug\net6.0\MVC CORE.DAL.pdb
+D:\.Net learning\back_end\MVC CORE Application\MVC CORE.DDL\obj\Debug\net6.0\ref\MVC CORE.DAL.dll

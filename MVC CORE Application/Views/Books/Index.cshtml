@@ -1,0 +1,71 @@
+﻿@using MVC_CORE_Application.Models.ViewModel
+@model IEnumerable<BookViewModel>
+
+@{
+    ViewData["Title"] = "Books";
+}
+
+@if(Model.Count()>0){
+
+
+    <div class="card border-primary mb-3 " style="max-width: 100%">
+        <div class="card-header">All Books  <a asp-action="Create" class="btn btn-warning" style="margin-left:800px;">Add New Book</a> </div>
+        <div class="card-body">
+            <form asp-action="Index">
+                <div class="row d-flex">
+                    <div class="col-md-6">
+                        <input class="form-control me-sm-2" type="search" name="searchValue" placeholder="Search By Name!">
+                    </div>
+                    <div class="col-4">
+                        <button class="btn btn-warning " type="submit">Search</button>
+                    </div>
+
+                </div>
+            </form>
+           <h4 class="card-title"></h4>
+
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Salary</th>
+                       <th scope="col">Description</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">Last Updated On</th>
+                        <th scope="col">Update</th>
+                        <th scope="col">Datials</th>
+                        <th scope="col">Delete</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach(var book in Model)
+                    {
+                        <tr class="table-active">
+                     
+                        <td>@book.Name</td>
+                            <td>@book.Salary</td>
+                            <td>@book.Description</td>
+                            <td>@book.Category?.Name</td>
+                            <td><img src="~/files/images/@book.ImageName" class="img-fluid rounded" height="60" width="60" /></td>
+                            <td>@book.LastUpdatedOn</td>
+                            <partial name="_ButtonsPartial" model="@book.Id"/>
+
+                    </tr>
+                    }
+                    
+                    
+                  
+                   
+                </tbody>
+            </table>
+        </div>
+    </div>
+}
+else{
+    <div class="alert alert-dismissible alert-warning">
+        <h4 class="alert-heading">Warning!</h4>
+        <h2 class="mb-0">There is no Books are Found ! <a asp-action="Create" style="margin-left:200px;" class="btn btn-success">Add New Book</a></h2>
+    </div>
+}

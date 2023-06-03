@@ -1,0 +1,29 @@
+﻿@using MVC_CORE_Application.Models.ViewModel
+@model CategoryViewModel
+@{
+
+    ViewData["Title"] = "Delete Category";
+}
+<div class="card border-danger mb-3" style="max-width: 70%; margin-left:200px;">
+    <div class="card-header">Delete Category </div>
+    <div class="card-body">
+        <h3 >Are You Sure You Want To Delete This Item! </h3>
+        <form asp-action="Delete">
+         <partial name="_PropertiesPartial"/>
+            <div class="row mt-3" style=" margin-left:350px;">
+                <div class="col-md-8">
+                    <div class="form-group">
+                        <a asp-action="Index" class="btn btn-danger">Back</a>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-trash"></i>
+
+                            Delete
+                            </button>
+                    </div>
+                </div>
+
+
+        </form>
+
+    </div>
+</div>

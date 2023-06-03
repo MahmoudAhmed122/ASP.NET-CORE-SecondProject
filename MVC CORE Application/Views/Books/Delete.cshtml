@@ -1,0 +1,19 @@
+﻿@using MVC_CORE_Application.Models.ViewModel
+
+@{  
+ ViewData["Title"] = " Delete Book ";
+}
+@model BookViewModel
+
+<form asp-action="Delete" enctype="multipart/form-data">
+    <input type="hidden" asp-for="ImageName"></input> 
+    <partial name="shared/_PropertiesPartial" />
+    <div class="row" >
+        <div class="col-md-12" style=" margin-left:300px;margin-top:0px;">
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Delete</button>
+            </div>
+        </div>
+    </div>
+</form>
+

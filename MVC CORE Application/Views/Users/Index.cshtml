@@ -1,0 +1,84 @@
+﻿@using MVC_CORE.DDL.Entities;
+@model IEnumerable<ApplicationUser>
+
+@{
+    ViewData["Title"] = "Users";
+}
+
+@if (Model?.Count() > 0)
+{
+
+
+    <div class="card border-primary mb-3 " style="max-width: 100%">
+        <div class="card-header">All Users</div>
+        <div class="card-body">
+            <form asp-action="Index">
+                <div class="row d-flex">
+                    <div class="col-md-6">
+                        <input class="form-control me-sm-2" type="search" name="searchValue" placeholder="Search By Email!">
+                    </div>
+                    <div class="col-4">
+                        <button class="btn btn-warning " type="submit">Search</button>
+                    </div>
+
+                </div>
+            </form>
+            <h4 class="card-title"></h4>
+
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">UserName</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Phone</th>
+                        <th scope="col">Update</th>
+                        <th scope="col">Delete</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var user in Model)
+                    {
+                        <tr class="table-active">
+                            <td>@user.UserName</td>
+                            <td>@user.Email</td>
+                            <td>@user.PhoneNumber</td>
+                            <td>
+                                <a class="btn btn-info btn-sm" asp-route-id="@user.Id.ToString()" asp-action="Edit">
+                                    <i class="fas fa-edit"></i>
+
+                                    Edit
+                                </a>
+                            </td>
+                     
+                            <td>
+                                <a class="btn btn-primary btn-sm" asp-route-id="@user.Id.ToString()" asp-action="Delete">
+                                    <i class="fas fa-trash"></i>
+
+                                    Delete
+                                </a>
+                            </td>
+                            <td>
+                                <a class="btn btn-warning btn-sm" asp-route-id="@user.Id.ToString()" asp-controller="Roles" asp-action="addRoles">
+
+                                    Add Role
+                                </a>
+                            </td>
+                        </tr>
+                    }
+
+
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+}
+else
+{
+    <div class="alert alert-dismissible alert-warning">
+        <h4 class="alert-heading">Warning!</h4>
+        <h2 class="mb-0">There is no Categories are Found ! <a asp-action="Create" style="margin-left:200px;" class="btn btn-success">Add New Category</a></h2>
+    </div>
+}

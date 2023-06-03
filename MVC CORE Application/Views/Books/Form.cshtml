@@ -1,0 +1,85 @@
+﻿@using MVC_CORE_Application.Models.ViewModel
+@model BookViewModel
+@{
+    var categories = new SelectList(ViewBag.Categories, "Id", "Name");
+    ViewData["Title"] = $"{(Model?.Id > 0 ? "Edit" : "Add")} Book";
+}
+
+<div class="card border-danger mb-3" style="max-width: 70%; margin-left:200px;">
+    <div class="card-header">@(Model?.Id > 0 ? "Edit" : "Add") Book </div>
+    <div class="card-body">
+
+        <form method="post" asp-action="@(Model?.Id > 0 ? "Edit" : "Create")" enctype="multipart/form-data">
+            <div class="row" style=" margin-left:200px;">
+                <div class="col-md-8">
+                    <div class="form-group">
+                        <label class="form-label mt-2" asp-for="Name"></label>
+
+                        <input class="form-control" asp-for="Name" placeholder="Enter Name">
+                        <span asp-validation-for="Name" class="text-white"></span>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row mt-3" style=" margin-left:200px;">
+                <div class="col-md-8">
+                    <div class="form-group">
+                        <label class="form-label mt-2" asp-for="Salary"></label>
+
+                        <input class="form-control" asp-for="Salary" placeholder="Enter Salary">
+                        <span asp-validation-for="Salary" class="text-white"></span>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row mt-3" style=" margin-left:200px;">
+                <div class="col-md-8">
+                    <div class="form-group">
+                        <label asp-for="Description" class="form-label mt-2"></label>
+                        <textarea class="form-control" asp-for="Description" rows="3"></textarea>
+                        <span asp-validation-for="Description" class="text-white"></span>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="row" style=" margin-left:200px;">
+                <div class="col-md-8">
+                    <div class="form-group">
+                        <label class="form-label mt-2" asp-for="Image"></label>
+                        <input asp-for ="Image" class="form-control" type="file">
+                        <span asp-validation-for="Image" class="text-danger"></span>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row" style=" margin-left:200px;">
+                <div class="col-md-8">
+                    <div class="form-group">
+                        <label class="form-label mt-3"> Category</label>
+
+                        <select class="form-select" asp-for="CategoryId" asp-items="categories">
+
+                            <option value="">--Select Category</option>
+                        </select>
+                        <span asp-validation-for="CategoryId" class="text-danger"></span>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3" style=" margin-left:350px;">
+                <div class="col-md-8">
+                    <div class="form-group">
+                        <a asp-action="Index" class="btn btn-danger">Back</a>
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                </div>
+
+
+        </form>
+
+    </div>
+</div>
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}

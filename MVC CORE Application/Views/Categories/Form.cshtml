@@ -1,0 +1,49 @@
+﻿@using MVC_CORE_Application.Models.ViewModel
+@model CategoryViewModel
+@{
+    ViewData["Title"] = $"{(Model?.Id > 0 ? "Edit" : "Add")} Category";
+}
+
+<div class="card border-danger mb-3" style="max-width: 70%; margin-left:200px;">
+    <div class="card-header">@(Model?.Id > 0 ? "Edit" : "Add") Category </div>
+    <div class="card-body">
+
+        <form asp-action="@(Model?.Id > 0 ? "Edit" : "Create")">
+            <div class="row" style=" margin-left:200px;">
+                <div class="col-md-8">
+                    <div class="form-group">
+                        <label asp-for="Name" class="form-label mt-2"></label>
+
+                        <input class="form-control" asp-for="Name" placeholder="Enter Name">
+                        <span asp-validation-for="Name" class="text-white"></span>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row mt-3" style=" margin-left:200px;">
+                <div class="col-md-8">
+                    <div class="form-group">
+                        <label asp-for="Code" class="form-label mt-2"></label>
+
+                        <input class="form-control" asp-for="Code" placeholder="Enter Code">
+                        <span asp-validation-for="Code" class="text-white"></span>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row mt-3" style=" margin-left:350px;">
+                <div class="col-md-8">
+                    <div class="form-group">
+                        <a asp-action="Index" class="btn btn-danger">Back</a>
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                </div>
+
+
+        </form>
+
+    </div>
+</div>
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}

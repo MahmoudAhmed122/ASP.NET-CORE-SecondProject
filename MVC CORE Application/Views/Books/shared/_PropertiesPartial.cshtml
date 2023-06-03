@@ -1,0 +1,67 @@
+﻿@using MVC_CORE_Application.Models.ViewModel
+@model BookViewModel
+@{
+    var categories = new SelectList(ViewBag.Categories, "Id", "Name");
+
+}
+<div class="card border-danger mb-3" style="max-width: 70%; margin-left:100px;">
+    <div class="card-header">Book Details </div>
+    <div class="card-body">
+        <div class="form-group " style="margin-left:200px;">
+            <img src="~/files/images/@Model.ImageName" class="img-fluid rounded " height="200" width="200" />
+            <div />
+            <div class="row" style=" margin-right:300px;">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label class="form-label mt-2" asp-for="Name"></label>
+
+                        <input class="form-control" asp-for="Name" readonly>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row mt-3" style=" margin-right:300px;">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label class="form-label mt-2" asp-for="Salary"></label>
+
+                        <input class="form-control" asp-for="Salary" readonly>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row mt-3" style=" margin-right:300px;">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label asp-for="Description" class="form-label mt-2"></label>
+                        <textarea class="form-control" asp-for="Description" readonly rows="3"></textarea>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row" style="margin-right:300px;">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label class="form-label mt-3"> Category</label>
+
+                        <select class="form-select" asp-for="CategoryId" disabled asp-items="categories">
+
+                            <option value="">--Select Category</option>
+                        </select>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5" style=" margin-right:300px; margin-top:100px;">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <a asp-action="Index" class="btn btn-danger">Back</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
